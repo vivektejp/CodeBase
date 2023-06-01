@@ -1,0 +1,23 @@
+<html>
+    
+    <head>
+        <title>Amount</title>
+    </head>
+    <script>
+        let amount=100;
+        var env='dev';
+        switch(env){
+            case 'dev':amount=amount+amount*.1;
+            break;
+            case 'test':amount=amount+amount*.2;
+            break;
+            case 'stage':amount=amount+amount*.3;
+            break;
+            case 'prod':amount=amount+amount*.05;
+            break;
+            default:amount=amount
+            break;
+        }
+        console.log(amount);
+    </script>
+</html>

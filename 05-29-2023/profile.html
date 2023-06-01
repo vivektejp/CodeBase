@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Information</title>
+  <style>
+    .avatar {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      
+    }
+  </style>
+</head>
+<body>
+  <h1>My Profile</h1>
+  <script>
+    const profile = {
+     name: "Vivek Teja",
+    age: 25,
+    gender: "Male",
+    occupation: "Software Engineer",
+    location: "Mckinney",
+    hobbies: ["Reading", "Playing Cricket", "Traveling", "Badminton"],
+    avatar: {
+      image: "circle.jpg"
+    }
+    };
+
+    document.write("<h2>Last Hobby: " + profile.hobbies[profile.hobbies.length - 1] + "</h2>");
+
+    const avatarImage = new Image();
+    avatarImage.src = profile.avatar.image;
+    avatarImage.style.height = profile.avatar.height;
+    avatarImage.style.width = profile.avatar.width;
+    document.body.appendChild(avatarImage);
+  </script>
+</body>
+</html>

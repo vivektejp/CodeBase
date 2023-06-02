@@ -3,17 +3,17 @@
 <head>
   <title>Profile Information</title>
   <style>
-    .avatar {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 50%;
-      
-    }
+    img{
+        width: 250;
+        height: 250;
+        border-radius: 50%;
+        }
+
   </style>
 </head>
 <body>
   <h1>My Profile</h1>
+  <img src ="circle.jpg" width="250" height="250">
   <script>
     const profile = {
      name: "Vivek Teja",
@@ -22,9 +22,33 @@
     occupation: "Software Engineer",
     location: "Mckinney",
     hobbies: ["Reading", "Playing Cricket", "Traveling", "Badminton"],
-    avatar: {
-      image: "circle.jpg"
-    }
+    };
+
+    const printLastHobbyAndProfile = () => {
+        const hobbies =  profile.hobbies;
+        const lastHobby = Object.keys(hobbies).pop();
+        console.log('Last Hobby:', hobbies[lastHobby]);
+
+        const remainingProfile = { ...profile };
+        //delete remainingProfile.hobbies;
+        //console.log('Remaining Profile:', remainingProfile);
+
+        const string = Object.entries(remainingProfile)
+            .map(entry => {
+                if (typeof entry[1] === 'object') {
+                    const nestedEntries = Object.entries(entry[1]);
+                    const nestedString = nestedEntries
+                        .map(nestedEntry => nestedEntry[0] + ': ' + nestedEntry[1] + ';')
+                        .join('</br>');
+                    return entry[0] + ':</br> {' + nestedString + '}';
+                } else {
+                    return entry[0] + ': ' + entry[1] + ';';
+                }
+            })
+            .join('</br>');
+            printLastHobbyAndProfile();
+
+        document.getElementById("profile_content").innerHTML = string;
     };
 
     document.write("<h2>Last Hobby: " + profile.hobbies[profile.hobbies.length - 1] + "</h2>");

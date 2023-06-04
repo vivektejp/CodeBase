@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hobbies</title>
+  <script>
+    let hobbies = ["Reading", "playing cricket", "Hiking"];
+
+    function displayHobbies() {
+      console.log(hobbies);
+      document.getElementById("hobbiesContainer").textContent = hobbies.join(", ");
+    }
+
+    function addHobby(newHobby) {
+      hobbies.push(newHobby);
+      console.log("New hobby added: " + newHobby);
+      displayHobbies();
+    }
+
+    function deleteHobby(hobbyToDelete) {
+      const index = hobbies.indexOf(hobbyToDelete);
+      if (index !== -1) {
+        hobbies.splice(index, 1);
+        console.log("Hobby deleted: " + hobbyToDelete);
+        displayHobbies();
+      } else {
+        console.log("Hobby not found: " + hobbyToDelete);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Hobbies</h1>
+  <div id="hobbiesContainer"></div>
+
+  <script>
+    displayHobbies();
+    addHobby("Gardening");
+    deleteHobby("Hiking");
+  </script>
+</body>
+</html>

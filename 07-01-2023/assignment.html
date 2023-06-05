@@ -10,13 +10,13 @@
       document.getElementById("hobbiesContainer").textContent = hobbies.join(", ");
     }
 
-    function addHobby(newHobby) {
+    function includeHobby(newHobby) {
       hobbies.push(newHobby);
       console.log("New hobby added: " + newHobby);
       displayHobbies();
     }
 
-    function deleteHobby(hobbyToDelete) {
+    function removeHobby(hobbyToDelete) {
       const index = hobbies.indexOf(hobbyToDelete);
       if (index !== -1) {
         hobbies.splice(index, 1);
@@ -29,13 +29,13 @@
   </script>
 </head>
 <body>
-  <h1>Hobbies</h1>
+  <h1>Hobbies are :</h1>
   <div id="hobbiesContainer"></div>
 
   <script>
     displayHobbies();
-    addHobby("Gardening");
-    deleteHobby("table tennis");
+    includeHobby("Gardening");
+    removeHobby("table tennis");
   </script>
 </body>
 </html>

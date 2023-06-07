@@ -44,9 +44,9 @@
 
   <script>
     function displayValues(event) {
-      event.preventDefault(); // Prevent form submission
+      event.preventDefault(); 
       
-      // Retrieve form values
+    
       const form = document.getElementById("profileForm");
       const firstname = form.elements["firstname"].value;
       const lastname = form.elements["lastname"].value;
@@ -56,7 +56,7 @@
       const hobbies = Array.from(form.elements["hobbies"]).filter(item => item.checked).map(item => item.value);
       const dob = form.elements["dob"].value;
       
-      // Create a string representation of the submitted values
+     
       const submittedValues = `
         First Name: ${firstname}<br>
         Last Name: ${lastname}<br>
@@ -67,11 +67,11 @@
         Date of Birth: ${dob}
       `;
       
-      // Display the submitted values
+    
       const submittedValuesDiv = document.getElementById("submittedValues");
       submittedValuesDiv.innerHTML = submittedValues;
       
-      // Clear the form fields
+     
       form.reset();
     }
   </script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Information</title>
+</head>
+<body>
+  <h2>Profile Information</h2>
+  <form id="profileForm" onsubmit="displayValues(event)">
+    <label for="firstname">First Name:</label>
+    <input type="text" id="firstname" name="firstname" ><br><br>
+    
+    <label for="lastname">Last Name:</label>
+    <input type="text" id="lastname" name="lastname" ><br><br>
+    
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select><br><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" ><br><br>
+    
+    <label for="phnno">Phone Number:</label>
+    <input type="text" id="phnno" name="phnno" ><br><br>
+    
+    <label for="hobbies">Hobbies:</label><br>
+    <input type="checkbox" id="hobby1" name="hobbies" value="reading">
+    <label for="hobby1">Reading</label><br>
+    <input type="checkbox" id="hobby2" name="hobbies" value="writing">
+    <label for="hobby2">Writing</label><br>
+    <input type="checkbox" id="hobby3" name="hobbies" value="painting">
+    <label for="hobby3">Painting</label><br><br>
+    
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" ><br><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Submitted Values:</h2>
+  <div id="submittedValues"></div>
+
+  <script>
+    function displayValues(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Retrieve form values
+      const form = document.getElementById("profileForm");
+      const firstname = form.elements["firstname"].value;
+      const lastname = form.elements["lastname"].value;
+      const gender = form.elements["gender"].value;
+      const email = form.elements["email"].value;
+      const phnno = form.elements["phnno"].value;
+      const hobbies = Array.from(form.elements["hobbies"]).filter(item => item.checked).map(item => item.value);
+      const dob = form.elements["dob"].value;
+      
+      // Create a string representation of the submitted values
+      const submittedValues = `
+        First Name: ${firstname}<br>
+        Last Name: ${lastname}<br>
+        Gender: ${gender}<br>
+        Email: ${email}<br>
+        Phone Number: ${phnno}<br>
+        Hobbies: ${hobbies.join(", ")}<br>
+        Date of Birth: ${dob}
+      `;
+      
+      // Display the submitted values
+      const submittedValuesDiv = document.getElementById("submittedValues");
+      submittedValuesDiv.innerHTML = submittedValues;
+      
+      // Clear the form fields
+      form.reset();
+    }
+  </script>
+</body>
+</html>

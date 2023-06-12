@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Array Prototype Method</title>
+  <script>
+    Array.prototype.getSecondSmallest = function() {
+      if (this.length < 2) {
+        return undefined;
+      }
+
+      var sortedArray = this.sort(function(a, b) {
+        return a - b;
+      });
+
+      return sortedArray[1];
+    };
+    
+    function getSecondSmallestValue() {
+      var numbers = [5, 2, 8, 1, 9, 4, 3];
+      var result = numbers.getSecondSmallest();
+      document.getElementById("result").textContent = "Second smallest value: " + result;
+    }
+  </script>
+</head>
+<body>
+  <h2>Custom Array Prototype Method</h2>
+  
+  <button onclick="getSecondSmallestValue()">Get Second Smallest Value</button>
+  <p id="result"></p>
+</body>
+</html>

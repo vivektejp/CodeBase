@@ -1,0 +1,29 @@
+.vertical-header {
+  display: flex;
+}
+
+.header {
+  flex: 0 0 200px;
+  color: white;
+  padding: 10px;
+}
+
+.navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation ul li {
+  margin-bottom: 10px;
+}
+
+
+.search-box input {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.search-box button {
+  padding: 5px 10px;
+}

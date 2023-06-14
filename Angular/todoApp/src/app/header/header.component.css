@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px;
+}
+
+.navigation ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navigation ul li {
+  margin-right: 10px;
+}
+
+.search-box input {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.search-box button {
+  padding: 5px 10px;
+}

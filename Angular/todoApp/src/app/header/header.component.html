@@ -1,0 +1,17 @@
+<header class="header" [ngStyle]="{ backgroundColor: headerBackground }">
+  <nav class="navigation">
+    <ul>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Contact</a></li>
+      <li>
+        <button (click)="toggleLogin()">
+          {{ isLoggedIn ? 'Logout' : 'Login' }}
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <div class="search-box">
+    <input type="text" placeholder="Search">
+    <button>Search</button>
+  </div>
+</header>

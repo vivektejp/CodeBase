@@ -1,27 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Component } from '@angular/core';
+interface Iprofile{
+  firstname: string;
+  lastname:string;
+  mobile: string;
+  email:string;
+  dob: string;
+  
+}
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
 
-  
-    firstName!: string;
-    lastName!: string;
-    email!: string;
-    phone!: string;
-    dob!: string;
+export class ProfileComponent {
 
-  constructor(private router: Router) { }
-
-  redirectToProfile() {
-    this.router.navigateByUrl('/profile');
-  }
-  
-  ngOnInit() {
-  }
-
+  allusers:any=localStorage.getItem("user");
+  users=JSON.parse(this.allusers)
+  firstname: string=this.users.firstname;
+  lastname: string=this.users.lastname;
+  mobile:string=this.users.mobile;
+  email:string=this.users.email;
+  dob:string=this.users.dob;
 }

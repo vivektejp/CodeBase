@@ -3,35 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
-import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { SignupComponent } from './signup/signup.component';
 
-const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-];
+
 
 @NgModule({
-  declarations: [								
+  declarations: [					
+    
     AppComponent,
-      NavigationComponent,
-      HeaderComponent,
-      LoginComponent,
-      SignupComponent,
-      ProfileComponent
+    LoginComponent,
+    ProfileComponent,
+      SignupComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

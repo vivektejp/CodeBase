@@ -1,31 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-
+interface Iprofile{
+  firstname: string;
+  lastname:string;
+  mobile: string;
+  email:string;
+  username: string;
+  password: string;
+}
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
+  profile:Iprofile={
+    firstname:"",
+    lastname:'',
+    mobile: '',
+    email:'',
+    username:"",
+    password: ""
+   
+    }
 
-  firstName!: string;
-  lastName!: string;
-  email!: string;
-  password!: string;
-  phone!: string;
-  dob!: string;
-  signup() {
-    // Add your signup logic here
-    console.log('Signing up...');
-    console.log('First Name:', this.firstName);
-    console.log('Last Name:', this.lastName);
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    console.log('Phone:', this.phone);
-    console.log('Date of Birth:', this.dob);
+  handleSignup() {
+    if (this.profile.username && this.profile.email && this.profile.password) {
+      localStorage.setItem("user",JSON.stringify(this.profile))
+      // Perform signup logic here
+      console.log('Signup successful');
+    } else {
+      console.log('Please enter all required fields');
+    }
+
+  
   }
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

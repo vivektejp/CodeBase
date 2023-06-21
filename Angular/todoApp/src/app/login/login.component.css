@@ -1,0 +1,17 @@
+body{
+  background-color: aqua;
+  text-align: center;
+}
+h2{
+  color: blueviolet;
+}
+.input username{
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  padding: 10px;
+  border: 2px;
+  padding-left: 5%;
+  padding-right: 5%;
+
+}
